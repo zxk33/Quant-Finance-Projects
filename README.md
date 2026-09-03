@@ -1,18 +1,16 @@
 # Quantitative Finance Projects
 
-A collection of three tested Python models exploring problems across Global Markets and Investment Banking. The projects use synthetic inputs and focus on transparent assumptions, reproducible experiments and interpretable risk measures.
+Three compact, tested Python models covering market microstructure, derivatives and fixed-income risk. Each project is built from the underlying mathematics, uses seeded synthetic data and includes explicit validation rather than presenting simulation output as fact.
 
-## Market Making Under Uncertainty
+| Project | Core question | Mathematics | Code and notes |
+|---|---|---|---|
+| Market Making Under Uncertainty | How do inventory-aware quotes change a dealer's risk? | Stochastic price dynamics, inventory skew, paired Monte Carlo, confidence intervals | [`market_making.py`](market_making.py) · [derivation](MARKET_MAKING_MATHS.md) |
+| Monte Carlo Derivatives Pricing | How accurately can simulation recover a European option value? | Risk-neutral GBM, antithetic sampling, sampling error, Black-Scholes | [`derivatives_pricing.py`](derivatives_pricing.py) · [derivation](DERIVATIVES_PRICING_MATHS.md) |
+| Bond Yield-Curve and Risk Engine | How does a bond respond to yield-curve shocks? | Curve bootstrapping, YTM, duration, convexity, scenario analysis | [`bond_risk_engine.py`](bond_risk_engine.py) · [derivation](BOND_RISK_ENGINE_MATHS.md) |
 
-`market_making.py` implements an event-driven dealer model with adverse selection, stochastic price jumps and inventory-sensitive quotes. A paired Monte Carlo experiment compares symmetric quoting with a risk-aware strategy using identical random paths. Across 2,000 trials, the inventory-aware controls reduced P&L volatility by 86.3%, loss frequency from 19.6% to 0.2%, and average maximum inventory from 21.3 to 4.7 units.
+## Reproducible result
 
-## Monte Carlo Derivatives Pricing
-
-`derivatives_pricing.py` prices European calls and puts under risk-neutral geometric Brownian motion. It includes antithetic variance reduction, standard errors, 95% confidence intervals, convergence analysis and a Black-Scholes benchmark.
-
-## Bond Yield-Curve and Risk Engine
-
-`bond_risk_engine.py` bootstraps zero rates from par yields and calculates bond prices, yield to maturity, Macaulay and modified duration, convexity, and P&L under parallel and curve-shape shocks.
+The market-making comparison uses 2,000 paired trials and identical random paths for both strategies. Against symmetric quoting, the inventory-aware strategy reduced P&L volatility by **86.3%**, loss frequency from **19.6% to 0.2%**, and average maximum inventory from **21.3 to 4.7 units**. These figures are outputs of the stated synthetic model, not claims about live trading performance.
 
 ## Run locally
 
@@ -21,4 +19,4 @@ python -m pip install -r requirements.txt
 pytest -q
 ```
 
-All ten automated tests should pass. The code is educational and is not investment advice.
+All **10 tests** should pass. The code is educational and is not investment advice.
