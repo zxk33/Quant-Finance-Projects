@@ -37,6 +37,26 @@ def black_scholes_price(
     return strike * exp(-rate * maturity) * _normal_cdf(-d2) - spot * _normal_cdf(-d1)
 
 
+def _discounted_payoff(
+    z: np.ndarray,
+    spot: float,
+    strike: float,
+    rate: float,
+    volatility: float,
+    maturity: float,
+    option_type: str,
+) -> np.ndarray:
+    terminal = spot * np.exp(
+        (rate - 0.5 * volatility**2) * maturity + volatility * sqrt(maturity) * z
+    )
+    payoff = (
+        np.maximum(terminal - strike, 0.0)
+        if option_type == "call"
+        else np.maximum(strike - terminal, 0.0)
+    )
+    return exp(-rate * maturity) * payoff
+
+
 def monte_carlo_price(
     spot: float,
     strike: float,
@@ -52,18 +72,25 @@ def monte_carlo_price(
         raise ValueError("paths must be at least 2")
     if option_type not in {"call", "put"}:
         raise ValueError("option_type must be 'call' or 'put'")
+    if antithetic and paths % 2:
+        raise ValueError("antithetic sampling requires an even path count")
+
     rng = np.random.default_rng(seed)
     if antithetic:
-        half = (paths + 1) // 2
-        z = rng.standard_normal(half)
-        z = np.concatenate([z, -z])[:paths]
+        z = rng.standard_normal(paths // 2)
+        positive = _discounted_payoff(z, spot, strike, rate, volatility, maturity, option_type)
+        negative = _discounted_payoff(-z, spot, strike, rate, volatility, maturity, option_type)
+        # Pair means, rather than individual correlated payoffs, are the IID
+        # sampling units used to estimate uncertainty.
+        sampling_units = 0.5 * (positive + negative)
     else:
         z = rng.standard_normal(paths)
-    terminal = spot * np.exp((rate - 0.5 * volatility**2) * maturity + volatility * sqrt(maturity) * z)
-    payoff = np.maximum(terminal - strike, 0.0) if option_type == "call" else np.maximum(strike - terminal, 0.0)
-    discounted = exp(-rate * maturity) * payoff
-    price = float(discounted.mean())
-    standard_error = float(discounted.std(ddof=1) / sqrt(paths))
+        sampling_units = _discounted_payoff(
+            z, spot, strike, rate, volatility, maturity, option_type
+        )
+
+    price = float(sampling_units.mean())
+    standard_error = float(sampling_units.std(ddof=1) / sqrt(sampling_units.size))
     margin = 1.96 * standard_error
     return Estimate(price, standard_error, (price - margin, price + margin), paths)
 
