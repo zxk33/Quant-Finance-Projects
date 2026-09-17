@@ -33,7 +33,7 @@ python -m pip install -r requirements.txt
 pytest -q
 ```
 
-All **45 tests** should pass (including parametrized cases). The code is educational and is not investment advice.
+All **54 tests** should pass (including parametrized cases). The code is educational and is not investment advice.
 
 ## New systems and valuation projects
 
@@ -68,3 +68,7 @@ New engineering, valuation and stress-report additions were implemented with
 Codex assistance. Sample financial inputs and event streams are explicitly
 synthetic. See module READMEs for algorithms, constraints and limitations.
 Run `python -m pytest -q` from the repository root; examples require no API keys.
+
+## Inventory research with held-out evaluation
+
+[Read the full study](quant_research/README.md): 18 candidate policies, independent training/validation/test simulations, matched controls, 12 stress/cost cases, tail-risk metrics, a chart and interview exercises. Model inputs are synthetic; risk reduction is reported alongside its profit cost.

@@ -1,0 +1,1108 @@
+{
+  "model": "Synthetic unit-order dealer model; not a market-data backtest",
+  "protocol": {
+    "train_seed": 101,
+    "validation_seed": 202,
+    "test_seeds": [
+      303,
+      304,
+      305,
+      306
+    ],
+    "train_trials": 1000,
+    "validation_trials": 1000,
+    "test_trials_per_regime": 2000,
+    "steps": 500,
+    "candidates": 18,
+    "shortlist": 3,
+    "objective": "mean P&L - 0.1 * P&L standard deviation",
+    "selection_fee": 0.005,
+    "liquidation_cost_per_unit": 0.02
+  },
+  "selected": {
+    "spread": 0.16,
+    "skew": 0.02,
+    "limit": 10
+  },
+  "matched_control": {
+    "spread": 0.16,
+    "skew": 0,
+    "limit": 10
+  },
+  "reference": {
+    "spread": 0.1,
+    "skew": 0,
+    "limit": 50
+  },
+  "training": [
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0.02,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 19.730603208233546,
+        "pnl_std": 4.821065195941599,
+        "mean_ci95": [
+          19.431790491593656,
+          20.029415924873437
+        ],
+        "loss_frequency": 0.001,
+        "expected_shortfall_95": -8.544886846481866,
+        "mean_max_drawdown": 3.1334723235214716,
+        "mean_max_inventory": 5.275,
+        "mean_trades": 209.857
+      },
+      "score": 19.248496688639385
+    },
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0.02,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 19.675977944378328,
+        "pnl_std": 4.754811213577834,
+        "mean_ci95": [
+          19.381271692109628,
+          19.970684196647028
+        ],
+        "loss_frequency": 0.001,
+        "expected_shortfall_95": -8.718144088914972,
+        "mean_max_drawdown": 3.0766013186513477,
+        "mean_max_inventory": 4.814,
+        "mean_trades": 209.145
+      },
+      "score": 19.200496823020544
+    },
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 20.494498579316232,
+        "pnl_std": 13.503987521822797,
+        "mean_ci95": [
+          19.657512761272557,
+          21.331484397359908
+        ],
+        "loss_frequency": 0.082,
+        "expected_shortfall_95": 9.549192956907886,
+        "mean_max_drawdown": 11.193032836247134,
+        "mean_max_inventory": 9.787,
+        "mean_trades": 197.379
+      },
+      "score": 19.144099827133953
+    },
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 19.31905206475796,
+        "pnl_std": 7.636349828212069,
+        "mean_ci95": [
+          18.845746198805042,
+          19.79235793071088
+        ],
+        "loss_frequency": 0.015,
+        "expected_shortfall_95": -2.176476341656084,
+        "mean_max_drawdown": 5.498389917506583,
+        "mean_max_inventory": 5.0,
+        "mean_trades": 187.702
+      },
+      "score": 18.555417081936756
+    },
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0.04,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 18.29380974094963,
+        "pnl_std": 3.745674573003442,
+        "mean_ci95": [
+          18.061650425670027,
+          18.525969056229233
+        ],
+        "loss_frequency": 0.0,
+        "expected_shortfall_95": -9.754453104975914,
+        "mean_max_drawdown": 2.190545494888679,
+        "mean_max_inventory": 3.969,
+        "mean_trades": 213.975
+      },
+      "score": 17.919242283649286
+    },
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0.04,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 18.29361369887914,
+        "pnl_std": 3.7476491542351447,
+        "mean_ci95": [
+          18.061331997786837,
+          18.52589539997144
+        ],
+        "loss_frequency": 0.0,
+        "expected_shortfall_95": -9.745560495066808,
+        "mean_max_drawdown": 2.192011168832776,
+        "mean_max_inventory": 3.978,
+        "mean_trades": 213.991
+      },
+      "score": 17.918848783455623
+    },
+    {
+      "policy": {
+        "spread": 0.12,
+        "skew": 0,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 18.155989072120793,
+        "pnl_std": 13.578664852893432,
+        "mean_ci95": [
+          17.31437470514411,
+          18.997603439097475
+        ],
+        "loss_frequency": 0.107,
+        "expected_shortfall_95": 11.169345247478985,
+        "mean_max_drawdown": 11.609784605681337,
+        "mean_max_inventory": 9.9,
+        "mean_trades": 257.309
+      },
+      "score": 16.79812258683145
+    },
+    {
+      "policy": {
+        "spread": 0.12,
+        "skew": 0,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 17.112566048018387,
+        "pnl_std": 7.587478351447975,
+        "mean_ci95": [
+          16.642289267577603,
+          17.58284282845917
+        ],
+        "loss_frequency": 0.014,
+        "expected_shortfall_95": -0.5771985314967294,
+        "mean_max_drawdown": 5.620425589306746,
+        "mean_max_inventory": 5.0,
+        "mean_trades": 244.825
+      },
+      "score": 16.353818212873588
+    },
+    {
+      "policy": {
+        "spread": 0.12,
+        "skew": 0.02,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 16.702156435974235,
+        "pnl_std": 4.984565569599788,
+        "mean_ci95": [
+          16.393209861184992,
+          17.011103010763478
+        ],
+        "loss_frequency": 0.004,
+        "expected_shortfall_95": -5.420401794298908,
+        "mean_max_drawdown": 3.386111170709122,
+        "mean_max_inventory": 5.755,
+        "mean_trades": 272.574
+      },
+      "score": 16.203699879014255
+    },
+    {
+      "policy": {
+        "spread": 0.12,
+        "skew": 0.02,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 16.638418357488685,
+        "pnl_std": 4.860880430665013,
+        "mean_ci95": [
+          16.33713786703371,
+          16.93969884794366
+        ],
+        "loss_frequency": 0.002,
+        "expected_shortfall_95": -5.788272894457857,
+        "mean_max_drawdown": 3.271370615510538,
+        "mean_max_inventory": 4.939,
+        "mean_trades": 271.218
+      },
+      "score": 16.152330314422183
+    },
+    {
+      "policy": {
+        "spread": 0.12,
+        "skew": 0.04,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 14.458803423282914,
+        "pnl_std": 3.814874398627856,
+        "mean_ci95": [
+          14.222355058375182,
+          14.695251788190646
+        ],
+        "loss_frequency": 0.002,
+        "expected_shortfall_95": -5.711870709406162,
+        "mean_max_drawdown": 2.4130495146920135,
+        "mean_max_inventory": 4.302,
+        "mean_trades": 276.909
+      },
+      "score": 14.077315983420128
+    },
+    {
+      "policy": {
+        "spread": 0.12,
+        "skew": 0.04,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 14.457395979560712,
+        "pnl_std": 3.812564072759185,
+        "mean_ci95": [
+          14.221090810133871,
+          14.693701148987552
+        ],
+        "loss_frequency": 0.002,
+        "expected_shortfall_95": -5.721559988909848,
+        "mean_max_drawdown": 2.4105225035924223,
+        "mean_max_inventory": 4.268,
+        "mean_trades": 276.856
+      },
+      "score": 14.076139572284793
+    },
+    {
+      "policy": {
+        "spread": 0.08,
+        "skew": 0,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 11.848265755323798,
+        "pnl_std": 13.39438785544464,
+        "mean_ci95": [
+          11.018072994980495,
+          12.678458515667101
+        ],
+        "loss_frequency": 0.193,
+        "expected_shortfall_95": 17.092206995137293,
+        "mean_max_drawdown": 12.701831677855894,
+        "mean_max_inventory": 9.971,
+        "mean_trades": 325.301
+      },
+      "score": 10.508826969779333
+    },
+    {
+      "policy": {
+        "spread": 0.08,
+        "skew": 0,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 11.21087556917346,
+        "pnl_std": 7.391292981145108,
+        "mean_ci95": [
+          10.752758483962383,
+          11.668992654384537
+        ],
+        "loss_frequency": 0.063,
+        "expected_shortfall_95": 4.738816329650429,
+        "mean_max_drawdown": 6.12420296588259,
+        "mean_max_inventory": 5.0,
+        "mean_trades": 309.849
+      },
+      "score": 10.471746271058949
+    },
+    {
+      "policy": {
+        "spread": 0.08,
+        "skew": 0.02,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 9.39352410570821,
+        "pnl_std": 5.178311365713237,
+        "mean_ci95": [
+          9.072569042064066,
+          9.714479169352353
+        ],
+        "loss_frequency": 0.042,
+        "expected_shortfall_95": 2.5409177792086544,
+        "mean_max_drawdown": 4.082763715747786,
+        "mean_max_inventory": 6.248,
+        "mean_trades": 343.675
+      },
+      "score": 8.875692969136885
+    },
+    {
+      "policy": {
+        "spread": 0.08,
+        "skew": 0.02,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 9.33691021326586,
+        "pnl_std": 4.980973549529987,
+        "mean_ci95": [
+          9.02818627418712,
+          9.645634152344599
+        ],
+        "loss_frequency": 0.039,
+        "expected_shortfall_95": 1.9661665409771008,
+        "mean_max_drawdown": 3.8967057020258786,
+        "mean_max_inventory": 4.989,
+        "mean_trades": 341.183
+      },
+      "score": 8.838812858312862
+    },
+    {
+      "policy": {
+        "spread": 0.08,
+        "skew": 0.04,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 6.400669574483753,
+        "pnl_std": 3.916306659692154,
+        "mean_ci95": [
+          6.157934372901615,
+          6.64340477606589
+        ],
+        "loss_frequency": 0.06,
+        "expected_shortfall_95": 2.296128367626241,
+        "mean_max_drawdown": 3.0636465490147504,
+        "mean_max_inventory": 4.578,
+        "mean_trades": 347.055
+      },
+      "score": 6.009038908514538
+    },
+    {
+      "policy": {
+        "spread": 0.08,
+        "skew": 0.04,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 6.399724975576564,
+        "pnl_std": 3.920624608058911,
+        "mean_ci95": [
+          6.156722144781931,
+          6.642727806371198
+        ],
+        "loss_frequency": 0.06,
+        "expected_shortfall_95": 2.3197636941319364,
+        "mean_max_drawdown": 3.069521784781088,
+        "mean_max_inventory": 4.677,
+        "mean_trades": 347.188
+      },
+      "score": 6.007662514770673
+    }
+  ],
+  "validation": [
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0.02,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 19.56168744716206,
+        "pnl_std": 4.718895827221313,
+        "mean_ci95": [
+          19.26920725360242,
+          19.854167640721702
+        ],
+        "loss_frequency": 0.0,
+        "expected_shortfall_95": -8.5205292752925,
+        "mean_max_drawdown": 3.039796779027822,
+        "mean_max_inventory": 5.313,
+        "mean_trades": 209.34
+      },
+      "score": 19.08979786443993
+    },
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0.02,
+        "limit": 5
+      },
+      "statistics": {
+        "mean_pnl": 19.47684418932905,
+        "pnl_std": 4.667978913895185,
+        "mean_ci95": [
+          19.187519858753113,
+          19.766168519904987
+        ],
+        "loss_frequency": 0.0,
+        "expected_shortfall_95": -8.626059875633718,
+        "mean_max_drawdown": 2.997664738377088,
+        "mean_max_inventory": 4.845,
+        "mean_trades": 208.569
+      },
+      "score": 19.01004629793953
+    },
+    {
+      "policy": {
+        "spread": 0.16,
+        "skew": 0,
+        "limit": 10
+      },
+      "statistics": {
+        "mean_pnl": 20.314137338923636,
+        "pnl_std": 14.087936017546731,
+        "mean_ci95": [
+          19.440958018138716,
+          21.187316659708557
+        ],
+        "loss_frequency": 0.085,
+        "expected_shortfall_95": 12.905413737866061,
+        "mean_max_drawdown": 11.36236322517093,
+        "mean_max_inventory": 9.84,
+        "mean_trades": 197.034
+      },
+      "score": 18.905343737168963
+    }
+  ],
+  "evaluation": [
+    {
+      "regime": "base",
+      "fee_per_fill": 0,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 20.793503182498284,
+          "pnl_std": 4.902395943993735,
+          "mean_ci95": [
+            20.578646207063855,
+            21.008360157932714
+          ],
+          "loss_frequency": 0.0,
+          "expected_shortfall_95": -9.433654967657413,
+          "mean_max_drawdown": 3.04396800606568,
+          "mean_max_inventory": 5.2635,
+          "mean_trades": 209.8655
+        },
+        "matched_control": {
+          "mean_pnl": 21.57131436660494,
+          "pnl_std": 13.563821778869382,
+          "mean_ci95": [
+            20.976853666972957,
+            22.165775066236925
+          ],
+          "loss_frequency": 0.0645,
+          "expected_shortfall_95": 10.436572896444806,
+          "mean_max_drawdown": 11.081182071413735,
+          "mean_max_inventory": 9.8175,
+          "mean_trades": 197.5145
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 18.127007863943902,
+          "pnl_std": 28.380526524609575,
+          "mean_ci95": [
+            16.88317644763715,
+            19.370839280250653
+          ],
+          "loss_frequency": 0.199,
+          "expected_shortfall_95": 55.32536266036492,
+          "mean_max_drawdown": 25.078881904754542,
+          "mean_max_inventory": 21.427,
+          "mean_trades": 303.4895
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.7778111841066577,
+        "ci95": [
+          -1.3029746718651465,
+          -0.25264769634816897
+        ]
+      }
+    },
+    {
+      "regime": "base",
+      "fee_per_fill": 0.005,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 19.744175682499236,
+          "pnl_std": 4.888183064455363,
+          "mean_ci95": [
+            19.529941613974962,
+            19.95840975102351
+          ],
+          "loss_frequency": 0.0005,
+          "expected_shortfall_95": -8.413647462289937,
+          "mean_max_drawdown": 3.0774050852045955,
+          "mean_max_inventory": 5.2635,
+          "mean_trades": 209.8655
+        },
+        "matched_control": {
+          "mean_pnl": 20.583741866605845,
+          "pnl_std": 13.546869678349749,
+          "mean_ci95": [
+            19.990024125536678,
+            21.17745960767501
+          ],
+          "loss_frequency": 0.0725,
+          "expected_shortfall_95": 11.373267905965038,
+          "mean_max_drawdown": 11.192014326394824,
+          "mean_max_inventory": 9.8175,
+          "mean_trades": 197.5145
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 16.609560363945285,
+          "pnl_std": 28.379228775881185,
+          "mean_ci95": [
+            15.36578582398427,
+            17.853334903906298
+          ],
+          "loss_frequency": 0.2155,
+          "expected_shortfall_95": 56.84056266036347,
+          "mean_max_drawdown": 25.340047463724837,
+          "mean_max_inventory": 21.427,
+          "mean_trades": 303.4895
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.8395661841066088,
+        "ci95": [
+          -1.3641474577761767,
+          -0.3149849104370408
+        ]
+      }
+    },
+    {
+      "regime": "base",
+      "fee_per_fill": 0.02,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 16.596193182499118,
+          "pnl_std": 4.848967956291689,
+          "mean_ci95": [
+            16.383677791867783,
+            16.808708573130453
+          ],
+          "loss_frequency": 0.002,
+          "expected_shortfall_95": -5.3474301538881095,
+          "mean_max_drawdown": 3.1966739382603477,
+          "mean_max_inventory": 5.2635,
+          "mean_trades": 209.8655
+        },
+        "matched_control": {
+          "mean_pnl": 17.62102436660573,
+          "pnl_std": 13.497628059634165,
+          "mean_ci95": [
+            17.029464734629258,
+            18.212583998582204
+          ],
+          "loss_frequency": 0.099,
+          "expected_shortfall_95": 14.184267905965127,
+          "mean_max_drawdown": 11.550007714621428,
+          "mean_max_inventory": 9.8175,
+          "mean_trades": 197.5145
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 12.05721786394512,
+          "pnl_std": 28.375964495279376,
+          "mean_ci95": [
+            10.813586387389241,
+            13.300849340500998
+          ],
+          "loss_frequency": 0.2575,
+          "expected_shortfall_95": 61.386162660363524,
+          "mean_max_drawdown": 26.19062554753736,
+          "mean_max_inventory": 21.427,
+          "mean_trades": 303.4895
+        }
+      },
+      "selected_minus_control": {
+        "mean": -1.024831184106614,
+        "ci95": [
+          -1.5477072363165685,
+          -0.5019551318966595
+        ]
+      }
+    },
+    {
+      "regime": "high_volatility",
+      "fee_per_fill": 0,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 4.596921432890633,
+          "pnl_std": 8.257115892102991,
+          "mean_ci95": [
+            4.235037373207045,
+            4.95880549257422
+          ],
+          "loss_frequency": 0.265,
+          "expected_shortfall_95": 14.878545687191556,
+          "mean_max_drawdown": 8.564399788643657,
+          "mean_max_inventory": 5.8835,
+          "mean_trades": 244.3725
+        },
+        "matched_control": {
+          "mean_pnl": 4.8657641801997915,
+          "pnl_std": 22.88559834510092,
+          "mean_ci95": [
+            3.8627586095339055,
+            5.8687697508656775
+          ],
+          "loss_frequency": 0.385,
+          "expected_shortfall_95": 49.651798982000635,
+          "mean_max_drawdown": 25.442328113949255,
+          "mean_max_inventory": 9.891,
+          "mean_trades": 230.857
+        },
+        "wide_limit_reference": {
+          "mean_pnl": -5.599358469602754,
+          "pnl_std": 51.55058561256536,
+          "mean_ci95": [
+            -7.858662498311281,
+            -3.340054440894226
+          ],
+          "loss_frequency": 0.461,
+          "expected_shortfall_95": 151.34041637351174,
+          "mean_max_drawdown": 54.23187372788088,
+          "mean_max_inventory": 22.315,
+          "mean_trades": 330.078
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.2688427473091584,
+        "ci95": [
+          -1.133984860584093,
+          0.596299365965776
+        ]
+      }
+    },
+    {
+      "regime": "high_volatility",
+      "fee_per_fill": 0.005,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 3.375058932891745,
+          "pnl_std": 8.254800645572125,
+          "mean_ci95": [
+            3.0132763433612597,
+            3.73684152242223
+          ],
+          "loss_frequency": 0.3075,
+          "expected_shortfall_95": 16.09998066014188,
+          "mean_max_drawdown": 8.837195165513924,
+          "mean_max_inventory": 5.8835,
+          "mean_trades": 244.3725
+        },
+        "matched_control": {
+          "mean_pnl": 3.711479180200846,
+          "pnl_std": 22.863742157785584,
+          "mean_ci95": [
+            2.709431499178055,
+            4.713526861223637
+          ],
+          "loss_frequency": 0.3995,
+          "expected_shortfall_95": 50.73914898199965,
+          "mean_max_drawdown": 25.717406893038977,
+          "mean_max_inventory": 9.891,
+          "mean_trades": 230.857
+        },
+        "wide_limit_reference": {
+          "mean_pnl": -7.249748469601218,
+          "pnl_std": 51.55095263886189,
+          "mean_ci95": [
+            -9.509068583946418,
+            -4.990428355256018
+          ],
+          "loss_frequency": 0.478,
+          "expected_shortfall_95": 152.99451637350995,
+          "mean_max_drawdown": 54.74592118572182,
+          "mean_max_inventory": 22.315,
+          "mean_trades": 330.078
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.33642024730910075,
+        "ci95": [
+          -1.2006838113041824,
+          0.5278433166859808
+        ]
+      }
+    },
+    {
+      "regime": "high_volatility",
+      "fee_per_fill": 0.02,
+      "statistics": {
+        "selected": {
+          "mean_pnl": -0.2905285671083871,
+          "pnl_std": 8.250127946357573,
+          "mean_ci95": [
+            -0.6521063665664619,
+            0.0710492323496878
+          ],
+          "loss_frequency": 0.4965,
+          "expected_shortfall_95": 19.766578616558927,
+          "mean_max_drawdown": 9.848101225823259,
+          "mean_max_inventory": 5.8835,
+          "mean_trades": 244.3725
+        },
+        "matched_control": {
+          "mean_pnl": 0.24862418020069177,
+          "pnl_std": 22.799204462542345,
+          "mean_ci95": [
+            -0.7505950116180685,
+            1.2478433720194522
+          ],
+          "loss_frequency": 0.456,
+          "expected_shortfall_95": 54.00119898199977,
+          "mean_max_drawdown": 26.594992781570728,
+          "mean_max_inventory": 9.891,
+          "mean_trades": 230.857
+        },
+        "wide_limit_reference": {
+          "mean_pnl": -12.200918469601408,
+          "pnl_std": 51.55238467072527,
+          "mean_ci95": [
+            -14.46030134551022,
+            -9.941535593692596
+          ],
+          "loss_frequency": 0.541,
+          "expected_shortfall_95": 157.95681637351078,
+          "mean_max_drawdown": 56.403522240719944,
+          "mean_max_inventory": 22.315,
+          "mean_trades": 330.078
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.5391527473090789,
+        "ci95": [
+          -1.400807358840488,
+          0.32250186422232996
+        ]
+      }
+    },
+    {
+      "regime": "informed_flow",
+      "fee_per_fill": 0,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 19.87741094698714,
+          "pnl_std": 5.032538165774281,
+          "mean_ci95": [
+            19.656850237201684,
+            20.097971656772597
+          ],
+          "loss_frequency": 0.0005,
+          "expected_shortfall_95": -8.301823315999915,
+          "mean_max_drawdown": 3.2569595515604526,
+          "mean_max_inventory": 5.5145,
+          "mean_trades": 223.502
+        },
+        "matched_control": {
+          "mean_pnl": 20.66018094883099,
+          "pnl_std": 13.573547246095163,
+          "mean_ci95": [
+            20.065294011804745,
+            21.255067885857237
+          ],
+          "loss_frequency": 0.074,
+          "expected_shortfall_95": 11.531972098691469,
+          "mean_max_drawdown": 11.389454342464381,
+          "mean_max_inventory": 9.835,
+          "mean_trades": 210.864
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 15.468751720497414,
+          "pnl_std": 29.31730197882642,
+          "mean_ci95": [
+            14.183864309723132,
+            16.753639131271694
+          ],
+          "loss_frequency": 0.2145,
+          "expected_shortfall_95": 64.68160722073654,
+          "mean_max_drawdown": 26.14094614443717,
+          "mean_max_inventory": 21.6335,
+          "mean_trades": 313.9
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.7827700018438527,
+        "ci95": [
+          -1.2972664341874205,
+          -0.2682735695002849
+        ]
+      }
+    },
+    {
+      "regime": "informed_flow",
+      "fee_per_fill": 0.005,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 18.759900946988157,
+          "pnl_std": 5.021174951065232,
+          "mean_ci95": [
+            18.539838252045136,
+            18.979963641931178
+          ],
+          "loss_frequency": 0.0005,
+          "expected_shortfall_95": -7.205233550737169,
+          "mean_max_drawdown": 3.29853666008286,
+          "mean_max_inventory": 5.5145,
+          "mean_trades": 223.502
+        },
+        "matched_control": {
+          "mean_pnl": 19.605860948831953,
+          "pnl_std": 13.553014170576521,
+          "mean_ci95": [
+            19.011873913517583,
+            20.199847984146324
+          ],
+          "loss_frequency": 0.083,
+          "expected_shortfall_95": 12.530475884984714,
+          "mean_max_drawdown": 11.512519259183156,
+          "mean_max_inventory": 9.835,
+          "mean_trades": 210.864
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 13.899251720498789,
+          "pnl_std": 29.315471837629985,
+          "mean_ci95": [
+            12.614444519198932,
+            15.184058921798647
+          ],
+          "loss_frequency": 0.2275,
+          "expected_shortfall_95": 66.25270722073536,
+          "mean_max_drawdown": 26.430728324232938,
+          "mean_max_inventory": 21.6335,
+          "mean_trades": 313.9
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.8459600018437945,
+        "ci95": [
+          -1.359698037378104,
+          -0.332221966309485
+        ]
+      }
+    },
+    {
+      "regime": "informed_flow",
+      "fee_per_fill": 0.02,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 15.407370946988022,
+          "pnl_std": 4.990662642105289,
+          "mean_ci95": [
+            15.188645512945905,
+            15.62609638103014
+          ],
+          "loss_frequency": 0.004,
+          "expected_shortfall_95": -3.8968644757806317,
+          "mean_max_drawdown": 3.4411350839323838,
+          "mean_max_inventory": 5.5145,
+          "mean_trades": 223.502
+        },
+        "matched_control": {
+          "mean_pnl": 16.442900948831834,
+          "pnl_std": 13.493107211417756,
+          "mean_ci95": [
+            15.85153945176435,
+            17.03426244589932
+          ],
+          "loss_frequency": 0.1145,
+          "expected_shortfall_95": 15.530015962608664,
+          "mean_max_drawdown": 11.910359754270235,
+          "mean_max_inventory": 9.835,
+          "mean_trades": 210.864
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 9.190751720498636,
+          "pnl_std": 29.31058304524963,
+          "mean_ci95": [
+            7.906158779971749,
+            10.475344661025522
+          ],
+          "loss_frequency": 0.2775,
+          "expected_shortfall_95": 70.96600722073558,
+          "mean_max_drawdown": 27.37086457144175,
+          "mean_max_inventory": 21.6335,
+          "mean_trades": 313.9
+        }
+      },
+      "selected_minus_control": {
+        "mean": -1.035530001843813,
+        "ci95": [
+          -1.5470380081053938,
+          -0.524021995582232
+        ]
+      }
+    },
+    {
+      "regime": "frequent_jumps",
+      "fee_per_fill": 0,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 15.163070712221234,
+          "pnl_std": 7.070454721109313,
+          "mean_ci95": [
+            14.853194371411833,
+            15.472947053030635
+          ],
+          "loss_frequency": 0.0255,
+          "expected_shortfall_95": 1.4502920490858342,
+          "mean_max_drawdown": 5.337564109458152,
+          "mean_max_inventory": 5.4245,
+          "mean_trades": 214.781
+        },
+        "matched_control": {
+          "mean_pnl": 15.592886071219997,
+          "pnl_std": 19.406312840929644,
+          "mean_ci95": [
+            14.74236691100306,
+            16.443405231436934
+          ],
+          "loss_frequency": 0.189,
+          "expected_shortfall_95": 30.632203615387816,
+          "mean_max_drawdown": 17.985303118079965,
+          "mean_max_inventory": 9.81,
+          "mean_trades": 202.0655
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 11.258290254496071,
+          "pnl_std": 41.8952850138749,
+          "mean_ci95": [
+            9.422148432032122,
+            13.09443207696002
+          ],
+          "loss_frequency": 0.2975,
+          "expected_shortfall_95": 102.24948446073078,
+          "mean_max_drawdown": 38.13431649938626,
+          "mean_max_inventory": 21.475,
+          "mean_trades": 306.8495
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.42981535899876316,
+        "ci95": [
+          -1.1683867612065681,
+          0.3087560432090419
+        ]
+      }
+    },
+    {
+      "regime": "frequent_jumps",
+      "fee_per_fill": 0.005,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 14.08916571222221,
+          "pnl_std": 7.0639228290543485,
+          "mean_ci95": [
+            13.779575644204078,
+            14.398755780240341
+          ],
+          "loss_frequency": 0.031,
+          "expected_shortfall_95": 2.5182491148380404,
+          "mean_max_drawdown": 5.417594508875833,
+          "mean_max_inventory": 5.4245,
+          "mean_trades": 214.781
+        },
+        "matched_control": {
+          "mean_pnl": 14.58255857122091,
+          "pnl_std": 19.390288519153607,
+          "mean_ci95": [
+            13.73274170787055,
+            15.432375434571268
+          ],
+          "loss_frequency": 0.203,
+          "expected_shortfall_95": 31.59324519484871,
+          "mean_max_drawdown": 18.156375715279225,
+          "mean_max_inventory": 9.81,
+          "mean_trades": 202.0655
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 9.724042754497514,
+          "pnl_std": 41.89292225898895,
+          "mean_ci95": [
+            7.888004484332132,
+            11.560081024662896
+          ],
+          "loss_frequency": 0.312,
+          "expected_shortfall_95": 103.77863446072934,
+          "mean_max_drawdown": 38.48931577097762,
+          "mean_max_inventory": 21.475,
+          "mean_trades": 306.8495
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.49339285899869834,
+        "ci95": [
+          -1.2313870309381583,
+          0.2446013129407616
+        ]
+      }
+    },
+    {
+      "regime": "frequent_jumps",
+      "fee_per_fill": 0.02,
+      "statistics": {
+        "selected": {
+          "mean_pnl": 10.867450712222086,
+          "pnl_std": 7.046888608760386,
+          "mean_ci95": [
+            10.558607201824566,
+            11.176294222619605
+          ],
+          "loss_frequency": 0.071,
+          "expected_shortfall_95": 5.726201485381399,
+          "mean_max_drawdown": 5.7093789294216055,
+          "mean_max_inventory": 5.4245,
+          "mean_trades": 214.781
+        },
+        "matched_control": {
+          "mean_pnl": 11.551576071220795,
+          "pnl_std": 19.343453523955755,
+          "mean_ci95": [
+            10.703811842037005,
+            12.399340300404585
+          ],
+          "loss_frequency": 0.2405,
+          "expected_shortfall_95": 34.47894519484874,
+          "mean_max_drawdown": 18.701943825415366,
+          "mean_max_inventory": 9.81,
+          "mean_trades": 202.0655
+        },
+        "wide_limit_reference": {
+          "mean_pnl": 5.121300254497304,
+          "pnl_std": 41.88624817701168,
+          "mean_ci95": [
+            3.2855544888712984,
+            6.957046020123309
+          ],
+          "loss_frequency": 0.3775,
+          "expected_shortfall_95": 108.36622124966387,
+          "mean_max_drawdown": 39.63540490247545,
+          "mean_max_inventory": 21.475,
+          "mean_trades": 306.8495
+        }
+      },
+      "selected_minus_control": {
+        "mean": -0.6841253589987097,
+        "ci95": [
+          -1.4204197820344113,
+          0.05216906403699184
+        ]
+      }
+    }
+  ]
+}
