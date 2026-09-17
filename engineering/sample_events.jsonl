@@ -1,0 +1,6 @@
+{"type":"submit","order_id":"ask-1","side":"sell","quantity":5,"price":10010}
+{"type":"submit","order_id":"ask-2","side":"sell","quantity":8,"price":10010}
+{"type":"submit","order_id":"bid-1","side":"buy","quantity":9,"price":10010}
+{"type":"submit","order_id":"bid-2","side":"buy","quantity":4,"price":10000}
+{"type":"cancel","order_id":"ask-2"}
+{"type":"submit","order_id":"market-sell","side":"sell","quantity":6}

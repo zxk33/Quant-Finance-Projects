@@ -1,0 +1,86 @@
+{
+  "outcomes": [
+    {
+      "order_id": "ask-1",
+      "filled": 0,
+      "resting": 5,
+      "expired": 0,
+      "trades": []
+    },
+    {
+      "order_id": "ask-2",
+      "filled": 0,
+      "resting": 8,
+      "expired": 0,
+      "trades": []
+    },
+    {
+      "order_id": "bid-1",
+      "filled": 9,
+      "resting": 0,
+      "expired": 0,
+      "trades": [
+        {
+          "maker": "ask-1",
+          "taker": "bid-1",
+          "price": 10010,
+          "quantity": 5
+        },
+        {
+          "maker": "ask-2",
+          "taker": "bid-1",
+          "price": 10010,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "order_id": "bid-2",
+      "filled": 0,
+      "resting": 4,
+      "expired": 0,
+      "trades": []
+    },
+    {
+      "cancelled": 4
+    },
+    {
+      "order_id": "market-sell",
+      "filled": 4,
+      "resting": 0,
+      "expired": 2,
+      "trades": [
+        {
+          "maker": "bid-2",
+          "taker": "market-sell",
+          "price": 10000,
+          "quantity": 4
+        }
+      ]
+    }
+  ],
+  "book": {
+    "buy": [],
+    "sell": []
+  },
+  "trades": [
+    {
+      "maker": "ask-1",
+      "taker": "bid-1",
+      "price": 10010,
+      "quantity": 5
+    },
+    {
+      "maker": "ask-2",
+      "taker": "bid-1",
+      "price": 10010,
+      "quantity": 4
+    },
+    {
+      "maker": "bid-2",
+      "taker": "market-sell",
+      "price": 10000,
+      "quantity": 4
+    }
+  ]
+}

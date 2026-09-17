@@ -1,0 +1,447 @@
+{
+  "label": "Northstar Components: fictional educational case, amounts in GBP millions except per-share values",
+  "assumptions": {
+    "revenue": 500,
+    "growth": [
+      0.08,
+      0.07,
+      0.06,
+      0.05,
+      0.04
+    ],
+    "ebit_margin": 0.18,
+    "tax_rate": 0.25,
+    "da_ratio": 0.03,
+    "capex_ratio": 0.05,
+    "nwc_ratio": 0.15,
+    "wacc": 0.1,
+    "terminal_growth": 0.02,
+    "net_debt": 120,
+    "shares": 50
+  },
+  "dcf": {
+    "forecast": [
+      {
+        "year": 1,
+        "revenue": 540.0,
+        "ebit": 97.2,
+        "tax": 24.3,
+        "depreciation": 16.2,
+        "capex": 27.0,
+        "change_nwc": 6.0,
+        "ufcf": 56.10000000000001,
+        "pv": 51.00000000000001
+      },
+      {
+        "year": 2,
+        "revenue": 577.8000000000001,
+        "ebit": 104.004,
+        "tax": 26.001,
+        "depreciation": 17.334,
+        "capex": 28.890000000000004,
+        "change_nwc": 5.67000000000001,
+        "ufcf": 60.776999999999994,
+        "pv": 50.2289256198347
+      },
+      {
+        "year": 3,
+        "revenue": 612.4680000000001,
+        "ebit": 110.24424,
+        "tax": 27.56106,
+        "depreciation": 18.37404,
+        "capex": 30.623400000000004,
+        "change_nwc": 5.200200000000001,
+        "ufcf": 65.23362,
+        "pv": 49.01098422238917
+      },
+      {
+        "year": 4,
+        "revenue": 643.0914000000001,
+        "ebit": 115.75645200000002,
+        "tax": 28.939113000000006,
+        "depreciation": 19.292742000000004,
+        "capex": 32.15457000000001,
+        "change_nwc": 4.593510000000009,
+        "ufcf": 69.362001,
+        "pv": 47.37517997404548
+      },
+      {
+        "year": 5,
+        "revenue": 668.8150560000001,
+        "ebit": 120.38671008000001,
+        "tax": 30.096677520000004,
+        "depreciation": 20.064451680000005,
+        "capex": 33.440752800000006,
+        "change_nwc": 3.8585484000000005,
+        "ufcf": 73.05518304000002,
+        "pv": 45.36152090952555
+      }
+    ],
+    "terminal_value": 931.4535837600002,
+    "terminal_pv": 578.3593915964508,
+    "enterprise_value": 821.3360023222457,
+    "net_debt": 120,
+    "equity_value": 701.3360023222457,
+    "value_per_share": 14.026720046444915,
+    "terminal_share_of_ev": 0.7041690489168833
+  },
+  "scenarios": {
+    "bear": {
+      "forecast": [
+        {
+          "year": 1,
+          "revenue": 515.0,
+          "ebit": 77.25,
+          "tax": 19.3125,
+          "depreciation": 15.45,
+          "capex": 25.75,
+          "change_nwc": 2.25,
+          "ufcf": 45.3875,
+          "pv": 41.26136363636363
+        },
+        {
+          "year": 2,
+          "revenue": 530.45,
+          "ebit": 79.56750000000001,
+          "tax": 19.891875000000002,
+          "depreciation": 15.9135,
+          "capex": 26.522500000000004,
+          "change_nwc": 2.3175000000000066,
+          "ufcf": 46.74912499999999,
+          "pv": 38.635640495867754
+        },
+        {
+          "year": 3,
+          "revenue": 546.3635,
+          "ebit": 81.954525,
+          "tax": 20.48863125,
+          "depreciation": 16.390905,
+          "capex": 27.318175000000004,
+          "change_nwc": 2.387025,
+          "ufcf": 48.151598750000005,
+          "pv": 36.1770088279489
+        },
+        {
+          "year": 4,
+          "revenue": 557.2907700000001,
+          "ebit": 83.59361550000001,
+          "tax": 20.898403875000003,
+          "depreciation": 16.718723100000002,
+          "capex": 27.864538500000005,
+          "change_nwc": 1.6390905000000031,
+          "ufcf": 49.91030572500001,
+          "pv": 34.08941037155932
+        },
+        {
+          "year": 5,
+          "revenue": 568.4365854000001,
+          "ebit": 85.26548781000001,
+          "tax": 21.316371952500003,
+          "depreciation": 17.053097562000005,
+          "capex": 28.421829270000007,
+          "change_nwc": 1.671872310000009,
+          "ufcf": 50.908511839499994,
+          "pv": 31.61018052635499
+        }
+      ],
+      "terminal_value": 649.0835259536249,
+      "terminal_pv": 403.0298017110261,
+      "enterprise_value": 584.8034055691207,
+      "net_debt": 120,
+      "equity_value": 464.80340556912074,
+      "value_per_share": 9.296068111382414,
+      "terminal_share_of_ev": 0.6891714341485483
+    },
+    "base": {
+      "forecast": [
+        {
+          "year": 1,
+          "revenue": 540.0,
+          "ebit": 97.2,
+          "tax": 24.3,
+          "depreciation": 16.2,
+          "capex": 27.0,
+          "change_nwc": 6.0,
+          "ufcf": 56.10000000000001,
+          "pv": 51.00000000000001
+        },
+        {
+          "year": 2,
+          "revenue": 577.8000000000001,
+          "ebit": 104.004,
+          "tax": 26.001,
+          "depreciation": 17.334,
+          "capex": 28.890000000000004,
+          "change_nwc": 5.67000000000001,
+          "ufcf": 60.776999999999994,
+          "pv": 50.2289256198347
+        },
+        {
+          "year": 3,
+          "revenue": 612.4680000000001,
+          "ebit": 110.24424,
+          "tax": 27.56106,
+          "depreciation": 18.37404,
+          "capex": 30.623400000000004,
+          "change_nwc": 5.200200000000001,
+          "ufcf": 65.23362,
+          "pv": 49.01098422238917
+        },
+        {
+          "year": 4,
+          "revenue": 643.0914000000001,
+          "ebit": 115.75645200000002,
+          "tax": 28.939113000000006,
+          "depreciation": 19.292742000000004,
+          "capex": 32.15457000000001,
+          "change_nwc": 4.593510000000009,
+          "ufcf": 69.362001,
+          "pv": 47.37517997404548
+        },
+        {
+          "year": 5,
+          "revenue": 668.8150560000001,
+          "ebit": 120.38671008000001,
+          "tax": 30.096677520000004,
+          "depreciation": 20.064451680000005,
+          "capex": 33.440752800000006,
+          "change_nwc": 3.8585484000000005,
+          "ufcf": 73.05518304000002,
+          "pv": 45.36152090952555
+        }
+      ],
+      "terminal_value": 931.4535837600002,
+      "terminal_pv": 578.3593915964508,
+      "enterprise_value": 821.3360023222457,
+      "net_debt": 120,
+      "equity_value": 701.3360023222457,
+      "value_per_share": 14.026720046444915,
+      "terminal_share_of_ev": 0.7041690489168833
+    },
+    "bull": {
+      "forecast": [
+        {
+          "year": 1,
+          "revenue": 560.0,
+          "ebit": 117.6,
+          "tax": 29.4,
+          "depreciation": 16.8,
+          "capex": 28.0,
+          "change_nwc": 9.0,
+          "ufcf": 67.99999999999999,
+          "pv": 61.8181818181818
+        },
+        {
+          "year": 2,
+          "revenue": 616.0,
+          "ebit": 129.35999999999999,
+          "tax": 32.339999999999996,
+          "depreciation": 18.48,
+          "capex": 30.8,
+          "change_nwc": 8.4,
+          "ufcf": 76.29999999999998,
+          "pv": 63.0578512396694
+        },
+        {
+          "year": 3,
+          "revenue": 665.2800000000001,
+          "ebit": 139.70880000000002,
+          "tax": 34.927200000000006,
+          "depreciation": 19.9584,
+          "capex": 33.264,
+          "change_nwc": 7.392000000000013,
+          "ufcf": 84.08400000000002,
+          "pv": 63.17355371900826
+        },
+        {
+          "year": 4,
+          "revenue": 711.8496000000001,
+          "ebit": 149.48841600000003,
+          "tax": 37.37210400000001,
+          "depreciation": 21.355488,
+          "capex": 35.59248000000001,
+          "change_nwc": 6.985440000000005,
+          "ufcf": 90.89388000000001,
+          "pv": 62.08174305033808
+        },
+        {
+          "year": 5,
+          "revenue": 747.4420800000001,
+          "ebit": 156.96283680000002,
+          "tax": 39.240709200000005,
+          "depreciation": 22.423262400000002,
+          "capex": 37.37210400000001,
+          "change_nwc": 5.338872000000003,
+          "ufcf": 97.434414,
+          "pv": 60.499105252373454
+        }
+      ],
+      "terminal_value": 1242.2887785,
+      "terminal_pv": 771.3635919677615,
+      "enterprise_value": 1081.9940270473326,
+      "net_debt": 120,
+      "equity_value": 961.9940270473326,
+      "value_per_share": 19.23988054094665,
+      "terminal_share_of_ev": 0.7129092884853954
+    }
+  },
+  "sensitivity": [
+    {
+      "wacc": 0.08,
+      "terminal_growth": 0,
+      "value_per_share": 15.160807470278918
+    },
+    {
+      "wacc": 0.08,
+      "terminal_growth": 0.01,
+      "value_per_share": 17.07858391441853
+    },
+    {
+      "wacc": 0.08,
+      "terminal_growth": 0.02,
+      "value_per_share": 19.63561917327135
+    },
+    {
+      "wacc": 0.08,
+      "terminal_growth": 0.03,
+      "value_per_share": 23.215468535665295
+    },
+    {
+      "wacc": 0.08,
+      "terminal_growth": 0.04,
+      "value_per_share": 28.5852425792562
+    },
+    {
+      "wacc": 0.09,
+      "terminal_growth": 0,
+      "value_per_share": 13.143574322989373
+    },
+    {
+      "wacc": 0.09,
+      "terminal_growth": 0.01,
+      "value_per_share": 14.581189141448222
+    },
+    {
+      "wacc": 0.09,
+      "terminal_growth": 0.02,
+      "value_per_share": 16.429551050895316
+    },
+    {
+      "wacc": 0.09,
+      "terminal_growth": 0.03,
+      "value_per_share": 18.89403359682477
+    },
+    {
+      "wacc": 0.09,
+      "terminal_growth": 0.04,
+      "value_per_share": 22.344309161126006
+    },
+    {
+      "wacc": 0.1,
+      "terminal_growth": 0,
+      "value_per_share": 11.531836396421008
+    },
+    {
+      "wacc": 0.1,
+      "terminal_growth": 0.01,
+      "value_per_share": 12.640673574209409
+    },
+    {
+      "wacc": 0.1,
+      "terminal_growth": 0.02,
+      "value_per_share": 14.026720046444915
+    },
+    {
+      "wacc": 0.1,
+      "terminal_growth": 0.03,
+      "value_per_share": 15.808779796461987
+    },
+    {
+      "wacc": 0.1,
+      "terminal_growth": 0.04,
+      "value_per_share": 18.18485946315142
+    },
+    {
+      "wacc": 0.11,
+      "terminal_growth": 0,
+      "value_per_share": 10.214919325597862
+    },
+    {
+      "wacc": 0.11,
+      "terminal_growth": 0.01,
+      "value_per_share": 11.089895905421143
+    },
+    {
+      "wacc": 0.11,
+      "terminal_growth": 0.02,
+      "value_per_share": 12.159311725205155
+    },
+    {
+      "wacc": 0.11,
+      "terminal_growth": 0.03,
+      "value_per_share": 13.496081499935169
+    },
+    {
+      "wacc": 0.11,
+      "terminal_growth": 0.04,
+      "value_per_share": 15.214785496016612
+    },
+    {
+      "wacc": 0.12,
+      "terminal_growth": 0,
+      "value_per_share": 9.11904450670375
+    },
+    {
+      "wacc": 0.12,
+      "terminal_growth": 0.01,
+      "value_per_share": 9.82249737856881
+    },
+    {
+      "wacc": 0.12,
+      "terminal_growth": 0.02,
+      "value_per_share": 10.666640824806882
+    },
+    {
+      "wacc": 0.12,
+      "terminal_growth": 0.03,
+      "value_per_share": 11.698371703542307
+    },
+    {
+      "wacc": 0.12,
+      "terminal_growth": 0.04,
+      "value_per_share": 12.988035301961581
+    }
+  ],
+  "comparables": {
+    "included": [
+      {
+        "name": "Fictional A",
+        "ev_ebitda": 8.0
+      },
+      {
+        "name": "Fictional B",
+        "ev_ebitda": 9.0
+      },
+      {
+        "name": "Fictional C",
+        "ev_ebitda": 10.5
+      }
+    ],
+    "excluded": [
+      "Fictional D"
+    ],
+    "median_ev_ebitda": 9.0,
+    "implied_enterprise_value": 945.0,
+    "implied_equity_value": 825.0,
+    "implied_value_per_share": 16.5
+  },
+  "acquisition": {
+    "new_shares": 4.0,
+    "interest_expense": 12.0,
+    "foregone_cash_interest": 3.0,
+    "proforma_income": 176.25,
+    "standalone_eps": 1.5,
+    "proforma_eps": 1.6947115384615385,
+    "accretion_dilution": 0.1298076923076923
+  }
+}

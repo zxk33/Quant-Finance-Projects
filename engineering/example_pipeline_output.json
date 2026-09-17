@@ -1,0 +1,25 @@
+{
+  "ingestion": {
+    "digest": "909f0a2ae9b3a25dc0a41145a542d2971e2590b40bacf690f8bed89039c5c407",
+    "loaded": 3,
+    "rejected": 3,
+    "duplicates": 1,
+    "already_loaded": false
+  },
+  "summary": [
+    {
+      "symbol": "DEMO",
+      "observations": 2,
+      "first_date": "2025-01-02",
+      "last_date": "2025-01-03",
+      "volume": 2200
+    },
+    {
+      "symbol": "OTHER",
+      "observations": 1,
+      "first_date": "2025-01-02",
+      "last_date": "2025-01-02",
+      "volume": 800
+    }
+  ]
+}

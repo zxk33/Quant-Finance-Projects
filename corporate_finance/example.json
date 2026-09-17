@@ -1,0 +1,8 @@
+{
+  "label": "Northstar Components: fictional educational case, amounts in GBP millions except per-share values",
+  "dcf": {"revenue": 500, "growth": [0.08,0.07,0.06,0.05,0.04], "ebit_margin": 0.18, "tax_rate": 0.25, "da_ratio": 0.03, "capex_ratio": 0.05, "nwc_ratio": 0.15, "wacc": 0.10, "terminal_growth": 0.02, "net_debt": 120, "shares": 50},
+  "scenarios": {"bear": {"growth": [0.03,0.03,0.03,0.02,0.02], "ebit_margin": 0.15}, "base": {}, "bull": {"growth": [0.12,0.10,0.08,0.07,0.05], "ebit_margin": 0.21}},
+  "waccs": [0.08,0.09,0.10,0.11,0.12], "terminal_growths": [0,0.01,0.02,0.03,0.04],
+  "comparables": {"peers": [{"name":"Fictional A","enterprise_value":800,"ebitda":100},{"name":"Fictional B","enterprise_value":990,"ebitda":110},{"name":"Fictional C","enterprise_value":1050,"ebitda":100},{"name":"Fictional D","enterprise_value":400,"ebitda":-10}],"target_ebitda":105,"net_debt":120,"shares":50},
+  "acquisition": {"acquirer_net_income":150,"acquirer_shares":100,"acquirer_price":25,"target_net_income":30,"purchase_equity":400,"cash_fraction":0.25,"debt_fraction":0.5,"debt_rate":0.06,"cash_yield":0.03,"pretax_synergies":10,"tax_rate":0.25}
+}

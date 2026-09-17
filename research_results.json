@@ -1,0 +1,149 @@
+{
+  "label": "Synthetic model results; not live trading performance",
+  "base": [
+    {
+      "strategy": "Symmetric quoting",
+      "mean_pnl": 17.951942073203885,
+      "pnl_volatility": 30.136673103998252,
+      "loss_frequency": 0.1955,
+      "mean_max_inventory": 21.318,
+      "confidence_interval_95": [
+        16.631144139549782,
+        19.272740006857987
+      ]
+    },
+    {
+      "strategy": "Inventory-aware quoting",
+      "mean_pnl": 13.847916573175075,
+      "pnl_volatility": 4.125341844225348,
+      "loss_frequency": 0.002,
+      "mean_max_inventory": 4.6725,
+      "confidence_interval_95": [
+        13.667115495210476,
+        14.028717651139674
+      ]
+    }
+  ],
+  "stress": [
+    {
+      "regime": "Base",
+      "trials": 500,
+      "steps": 500,
+      "seed": 17,
+      "volatility": 0.08,
+      "informedness": 0.85,
+      "jump_probability": 0.012,
+      "strategies": [
+        {
+          "name": "Symmetric",
+          "mean_pnl": 19.055544675430163,
+          "pnl_std": 27.57551589382891,
+          "loss_frequency": 0.192,
+          "mean_max_inventory": 21.442
+        },
+        {
+          "name": "Inventory-aware",
+          "mean_pnl": 13.778330770268974,
+          "pnl_std": 4.354272349119638,
+          "loss_frequency": 0.0,
+          "mean_max_inventory": 4.67
+        }
+      ],
+      "paired_mean_pnl_difference": -5.277213905161186,
+      "paired_difference_ci95": [
+        -7.626813275489052,
+        -2.9276145348333196
+      ]
+    },
+    {
+      "regime": "Higher volatility",
+      "trials": 500,
+      "steps": 500,
+      "seed": 17,
+      "volatility": 0.16,
+      "informedness": 0.85,
+      "jump_probability": 0.012,
+      "strategies": [
+        {
+          "name": "Symmetric",
+          "mean_pnl": -2.3015639797352128,
+          "pnl_std": 45.43380073350337,
+          "loss_frequency": 0.464,
+          "mean_max_inventory": 22.182
+        },
+        {
+          "name": "Inventory-aware",
+          "mean_pnl": -7.6986535231389945,
+          "pnl_std": 7.2427404629588485,
+          "loss_frequency": 0.86,
+          "mean_max_inventory": 5.134
+        }
+      ],
+      "paired_mean_pnl_difference": -5.397089543403783,
+      "paired_difference_ci95": [
+        -9.272161405648797,
+        -1.5220176811587685
+      ]
+    },
+    {
+      "regime": "More informed flow",
+      "trials": 500,
+      "steps": 500,
+      "seed": 17,
+      "volatility": 0.08,
+      "informedness": 1.2,
+      "jump_probability": 0.012,
+      "strategies": [
+        {
+          "name": "Symmetric",
+          "mean_pnl": 15.989179947516767,
+          "pnl_std": 28.600119678583027,
+          "loss_frequency": 0.22,
+          "mean_max_inventory": 21.788
+        },
+        {
+          "name": "Inventory-aware",
+          "mean_pnl": 11.284177668253374,
+          "pnl_std": 4.477219843916491,
+          "loss_frequency": 0.018,
+          "mean_max_inventory": 4.818
+        }
+      ],
+      "paired_mean_pnl_difference": -4.705002279263394,
+      "paired_difference_ci95": [
+        -7.151035917327653,
+        -2.258968641199135
+      ]
+    },
+    {
+      "regime": "More jumps",
+      "trials": 500,
+      "steps": 500,
+      "seed": 17,
+      "volatility": 0.08,
+      "informedness": 0.85,
+      "jump_probability": 0.04,
+      "strategies": [
+        {
+          "name": "Symmetric",
+          "mean_pnl": 13.798295886720657,
+          "pnl_std": 41.38870518196148,
+          "loss_frequency": 0.278,
+          "mean_max_inventory": 21.448
+        },
+        {
+          "name": "Inventory-aware",
+          "mean_pnl": 7.507665988312272,
+          "pnl_std": 6.072287517853202,
+          "loss_frequency": 0.114,
+          "mean_max_inventory": 4.764
+        }
+      ],
+      "paired_mean_pnl_difference": -6.290629898408386,
+      "paired_difference_ci95": [
+        -9.828994161986689,
+        -2.752265634830083
+      ]
+    }
+  ]
+}
