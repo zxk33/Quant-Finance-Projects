@@ -1,76 +1,65 @@
-# Mathematics: Cross-Sectional Equity Signals
+# Mathematics: Equity Screening & Backtesting
 
-This note gives the mathematics behind the equity-screening framework in
-`equity_signal_research.py`.
+The implementation in [equity_signal_research.py](equity_signal_research.py) is an educational framework. It does not claim to have discovered profitable real-market signals.
 
-## 1. Cross-sectional standardisation
+## 1. Standardise each feature
 
-For signal k, asset i and date t, the raw feature x is converted into a
-cross-sectional z-score
+For asset \(i\), feature \(k\) and date \(t\), compute its cross-sectional z-score:
 
-[
-z_{i,t}^{(k)} = rac{x_{i,t}^{(k)}-mu_t^{(k)}}{sigma_t^{(k)}}.
-]
+$$
+z_{i,t}^{(k)}=\frac{x_{i,t}^{(k)}-\mu_t^{(k)}}{\sigma_t^{(k)}}.
+$$
 
-This makes signals with different units comparable inside the same date. A
-direction coefficient d_k in {+1,-1} determines whether larger or smaller raw
-values are preferred.
+Here \(\mu_t^{(k)}\) and \(\sigma_t^{(k)}\) are the mean and standard deviation across eligible assets **on the same date**. This makes features measured in different units comparable.
 
-## 2. Composite score
+## 2. Build a transparent score
 
-With K signals,
+For \(K\) features and chosen direction \(d_k\in\{-1,1\}\):
 
-[
-s_{i,t} = rac{1}{K}sum_{k=1}^{K} d_k z_{i,t}^{(k)}.
-]
+$$
+s_{i,t}=\frac{1}{K}\sum_{k=1}^{K} d_k z_{i,t}^{(k)}.
+$$
 
-The score is intentionally transparent: there is no fitted black-box model.
+Rank assets by this score. There is no trained predictive model hidden in the score.
 
-## 3. Market-neutral portfolio
+## 3. Construct an approximately market-neutral portfolio
 
-Assets are ranked by s. The highest-scoring q fraction is long and the
-lowest-scoring q fraction is short. With n_L longs and n_S shorts,
+Select the highest-scoring \(n_L\) assets for the long basket and the lowest-scoring \(n_S\) for the short basket. Equal weights within each basket give
 
-[
-w_{i,t}=
-egin{cases}
-+0.5/n_L & i in L_t,\
--0.5/n_S & i in S_t,\
-0 & 	ext{otherwise}.
-end{cases}
-]
+$$
+w_{i,t}=\begin{cases}
+\frac{0.5}{n_L} & i\in L_t,\\
+-\frac{0.5}{n_S} & i\in S_t,\\
+0 & \text{otherwise}.
+\end{cases}
+$$
 
-Therefore gross exposure is 1 and net exposure is 0.
+The portfolio has unit gross exposure and zero net dollar exposure by construction. Dollar neutrality does **not** guarantee beta neutrality.
 
-## 4. Turnover and transaction costs
+## 4. Evaluate return after costs
 
-Portfolio turnover is
+If \(r_{i,t+1}\) is the *next-period* asset return and \(c\) is the assumed transaction cost in basis points:
 
-[
-T_t = sum_i |w_{i,t}-w_{i,t-1}|.
-]
+$$
+T_t=\sum_i |w_{i,t}-w_{i,t-1}|,
+$$
 
-If the assumed one-way cost is c basis points, the cost-adjusted next-period
-return is
+$$
+R_{t+1}=\sum_i w_{i,t}r_{i,t+1}-T_t\frac{c}{10{,}000}.
+$$
 
-[
-r_{p,t+1} = sum_i w_{i,t}r_{i,t+1} - T_t c	imes10^{-4}.
-]
+Weights are determined before the forward return is applied.
 
-## 5. Performance statistics
+## 5. Report risk alongside returns
 
-The implementation reports cumulative return, annualised Sharpe ratio, maximum
-drawdown and average turnover. For daily data,
+For daily portfolio returns \(R_t\), the annualised sample Sharpe (assuming zero benchmark rate) is
 
-[
-	ext{Sharpe} = sqrt{252},rac{ar r}{s_r}.
-]
+$$
+\widehat{SR}=\sqrt{252}\,\frac{\overline R}{s_R}.
+$$
 
-## 6. Timing discipline
+The code also computes cumulative return, drawdown and turnover.
 
-Weights for date t use only features available at t; forward returns are
-evaluated only after the weights are fixed. Fundamental features must be lagged
-to their actual publication dates. Otherwise the test contains look-ahead bias.
+## Limitations
 
-This framework is a research tool, not evidence that any particular signal
-produces persistent live-market alpha.
+Fundamental indicators require actual **publication-date lags**. Any real-data study must additionally control for survivorship bias, liquidity constraints, changing universes, borrowing costs, subperiod sensitivity and out-of-sample selection. The repository provides a testing framework, not independently validated alpha.
