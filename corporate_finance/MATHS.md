@@ -1,75 +1,70 @@
-# Mathematics: Corporate Valuation
+# Mathematics: Company Valuation
 
-This note summarises the mathematics used by the corporate valuation module.
+This note explains the mathematics used in the [valuation module](valuation.py). Supplied examples are **fictional practice inputs**, not proprietary investment research.
 
 ## 1. Unlevered free cash flow
 
-[
-UFCF_t = EBIT_t(1-	au) + D&A_t - Capex_t - Delta NWC_t.
-]
+$$
+UFCF_t=EBIT_t(1-\tau)+D\&A_t-Capex_t-\Delta NWC_t,
+$$
 
-The model forecasts operating results for five years and discounts unlevered
-cash flow at WACC.
+where \(\tau\) is the assumed cash tax rate.
 
 ## 2. Discounted cash flow
 
-[
-PV(UFCF_t)=rac{UFCF_t}{(1+WACC)^t}.
-]
+Discount forecast cash flow using weighted-average cost of capital:
 
-Terminal value uses the Gordon growth model:
+$$
+PV(UFCF_t)=\frac{UFCF_t}{(1+WACC)^t}.
+$$
 
-[
-TV_n = rac{UFCF_n(1+g)}{WACC-g},
-qquad g < WACC.
-]
+A constant-growth terminal value after year \(n\) is
 
-Enterprise value is
+$$
+TV_n=\frac{UFCF_n(1+g)}{WACC-g}, \qquad g<WACC.
+$$
 
-[
-EV = sum_{t=1}^{n}rac{UFCF_t}{(1+WACC)^t}
-     + rac{TV_n}{(1+WACC)^n}.
-]
+Thus
 
-Equity value follows from the enterprise-value bridge:
+$$
+EV=\sum_{t=1}^{n}\frac{UFCF_t}{(1+WACC)^t}+
+\frac{TV_n}{(1+WACC)^n}.
+$$
 
-[
-Equity Value = EV - Net Debt.
-]
+The simplified enterprise-to-equity bridge is
 
-Per-share value is equity value divided by diluted shares outstanding.
+$$
+Equity\ Value=EV-Net\ Debt.
+$$
+
+Diluted per-share value is equity value divided by diluted shares outstanding.
 
 ## 3. Sensitivity analysis
 
-The model evaluates a grid of WACC and terminal-growth assumptions. This matters
-because terminal value can represent a large fraction of DCF enterprise value.
+Change both \(WACC\) and terminal growth \(g\) over a specified grid. Report the resulting valuation **range**, since small changes in long-run assumptions can materially change terminal value.
 
-## 4. Trading comparables
+## 4. Peer multiples
 
-For a peer j,
+For peer \(j\):
 
-[
-EV/EBITDA_j = rac{EV_j}{EBITDA_j}.
-]
+$$
+M_j=\frac{EV_j}{EBITDA_j}.
+$$
 
-The peer median multiple is applied to target EBITDA to obtain an implied
-enterprise value, which is then bridged to equity value.
+Apply a selected peer multiple to the target's EBITDA; bridge implied enterprise value to equity value using the target's net debt.
 
-## 5. Acquisition EPS
+## 5. Acquisition earnings per share
 
-Standalone EPS is
+The simplified standalone EPS calculation is
 
-[
-EPS_A = rac{Net Income_A}{Shares_A}.
-]
+$$
+EPS_A=\frac{NI_A}{Shares_A}.
+$$
 
-For a transaction funded with cash, debt and stock, pro-forma earnings adjust
-for target earnings, after-tax interest, foregone cash interest and synergies.
-New shares equal stock consideration divided by the acquirer share price.
+For an acquisition, pro-forma earnings combine the parties' earnings with stated financing, synergy and other transaction assumptions. Stock issued increases the diluted share count. The EPS comparison is
 
-[
-Accretion/Dilution = rac{EPS_{proforma}}{EPS_A}-1.
-]
+$$
+Accretion/Dilution=\frac{EPS_{pro\ forma}}{EPS_A}-1.
+$$
 
-The model is intentionally simplified and does not claim to be a full
-three-statement merger model.
+This educational module is not a full three-statement transaction model; results depend on the fictional inputs and selected assumptions.
