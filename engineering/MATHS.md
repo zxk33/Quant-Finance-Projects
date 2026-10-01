@@ -1,35 +1,31 @@
-# Mathematical Notes: Market Systems Engineering
+# Mathematical Notes: Limit Order Book and Data Pipeline
 
-The engineering projects are software systems, but their design is built around
-precise invariants and deterministic rules.
+The engineering modules emphasise correctness, deterministic behaviour and reproducible data handling.
 
-## Limit order book
+## 1. Price-time priority
 
-Orders are ranked lexicographically by price priority and then time priority.
-For bids, higher price ranks first; for asks, lower price ranks first. Within a
-price level, earlier sequence number ranks first.
+A resting order ranks first by **price priority**, then by arrival time within that price level:
 
-A valid book obeys the spread condition
+- A buy order at the higher price ranks first.
+- A sell order at the lower price ranks first.
+- At equal price, the earlier accepted order ranks first.
 
-[
-best bid < best ask
-]
+With no currently crossing matchable orders, a valid book obeys
 
-whenever no crossing order is currently being matched.
+$$
+best\ bid < best\ ask.
+$$
 
-For every execution with size q,
+## 2. Matched quantity
 
-[
-q = min(q_{incoming}, q_{resting}),
-]
+For incoming remaining quantity \(q_{in}\) and a matchable resting quantity \(q_{rest}\):
 
-and remaining quantities are reduced by exactly q. This gives a simple
-conservation invariant: executed quantity cannot exceed either side's available
-quantity.
+$$
+q_{fill}=\min(q_{in},q_{rest}).
+$$
 
-## Price-data pipeline
+Both quantities are reduced by exactly \(q_{fill}\). This produces a basic conservation invariant: a fill cannot consume more quantity than either side had available.
 
-The data-ingestion project focuses on reproducibility rather than modelling.
-Important invariants are uniqueness of accepted observations, idempotent replay,
-atomic writes and explicit quarantine of invalid rows. A SHA-256 content key is
-used to make repeated ingestion deterministic.
+## 3. Reproducible ingestion
+
+The price-data pipeline is a software-engineering project. Its invariants include deduplicating accepted observations, making replay idempotent, applying atomic transactions and quarantining invalid rows. The design prioritises predictable failure and recovery rather than any trading-performance claim.
